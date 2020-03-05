@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Kalendar</string>
+    <string name="post_label">POST</string>
+    <string name="greg_datum_label">Novi datum</string>
+    <string name="pravoslavnipostlabel">POST</string>
+    <string name="gregDatum">Novi Datum</string>
+</resources>
