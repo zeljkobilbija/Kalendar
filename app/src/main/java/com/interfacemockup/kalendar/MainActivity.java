@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private View _view;
     private int rb_danaUgodini = 0;
     private Calendar _calendar;
-    private int _counter = 2;
+    private int _counter = 0;
     private PravoslavniKalendar shared_kalendar_instance;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -41,16 +41,15 @@ public class MainActivity extends AppCompatActivity {
         rb_danaUgodini = _calendar.get(Calendar.DAY_OF_YEAR)-1;
 
         shared_kalendar_instance = PravoslavniKalendar.getInstance();
-        rb_danaUgodini = shared_kalendar_instance.rbDanaUGodini();
+        rb_danaUgodini = shared_kalendar_instance.getRedniBrojDanaUGodini();
 
-        _view = (View)findViewById(R.id.bgView);
-        _postLabel = (PravoslavniPostLabel)findViewById(R.id.idPostLabe);
+        _view = findViewById(R.id.bgView);
 
-        _gregorijanskiDatumLabel = (PravoslavniGregorijanskiDatumLabel)findViewById(R.id.idGregorijanskiDatumLabel);
-        _gregorijanskiDatumLabel.setTekst(_counter);
-        _gregorijanskiDatumLabel.setBojuTexta(_counter);
+        _postLabel = findViewById(R.id.idPostLabe);
+        _gregorijanskiDatumLabel = findViewById(R.id.idGregorijanskiDatumLabel);
 
-        _ikona = (PravoslavnaIkona)findViewById(R.id.idIkona);
+        setUI();
+        _ikona = findViewById(R.id.idIkona);
         _ikona.setIkonu(4);
 
         setSwipes(rb_danaUgodini);
@@ -59,14 +58,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void setUI(){
+        _gregorijanskiDatumLabel.setTekst(_counter);
+        _gregorijanskiDatumLabel.setBojuTexta(_counter);
+        String str = String.valueOf(_counter);
+        _postLabel.setText(str);
+    }
+
 
 
 
     /*  TODO: SWIPE GESTURES AND ANIMATIONS     */
-    public void setSwipes(int rb_dana_u_god){
-        _view.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this){
+    public void setSwipes(int rb_dana_u_god) {
+        _view.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
 
 
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onSwipeLeft() {
                 super.onSwipeLeft();
@@ -75,9 +83,11 @@ public class MainActivity extends AppCompatActivity {
                         .repeat(0)
                         .playOn(_ikona);
                 rb_danaUgodini = rb_danaUgodini - 1;
-
+                _counter = _counter + 1;
+                setUI();
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
@@ -86,8 +96,11 @@ public class MainActivity extends AppCompatActivity {
                         .repeat(0)
                         .playOn(_ikona);
                 rb_danaUgodini = rb_danaUgodini + 1;
+                _counter = _counter - 1;
+                setUI();
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onSwipeBottom() {
                 super.onSwipeBottom();
@@ -96,8 +109,11 @@ public class MainActivity extends AppCompatActivity {
                         .repeat(0)
                         .playOn(_ikona);
                 rb_danaUgodini = rb_danaUgodini - 1;
+                _counter = 0;
+                setUI();
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onSwipeTop() {
                 super.onSwipeTop();
@@ -105,9 +121,12 @@ public class MainActivity extends AppCompatActivity {
                         .duration(550)
                         .repeat(0)
                         .playOn(_ikona);
+                _counter = 0;
+                setUI();
             }
 
         });
+
     }
 
 }

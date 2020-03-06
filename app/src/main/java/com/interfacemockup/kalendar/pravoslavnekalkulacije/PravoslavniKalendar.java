@@ -24,31 +24,20 @@ public class PravoslavniKalendar {
     }
 
 
-    public int rbDanaUGodini(){
-        _broj = _cal.get(Calendar.DAY_OF_YEAR) - 1;
-        return _broj;
-    }
 
 
-    public int rbDanaUGodini(Date izmenjeniDatum){
-        return _broj;
-    }
+
 
 
     public Date setStariDatum(int counter) {
         _danas = _cal.getTime();
         _cal.add(Calendar.DATE, -13 + counter); // oduzima 13 dana
-        Date stariKalendar = _cal.getTime();
-        return stariKalendar;
+        return _cal.getTime();
     }
 
     public boolean prestupnaGodina(){
         _cal = GregorianCalendar.getInstance();
-        if(_cal.isLenient()){
-            return true;
-        }else {
-            return false;
-        }
+        return _cal.isLenient();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -68,9 +57,25 @@ public class PravoslavniKalendar {
         String date = sdf.format(izmenjenidatum);
         String danDate = danFormat.format(izmenjenidatum);
 
-        String dd = danDate + date + " god.";
-        return dd;
+        return danDate + date + " god.";
     }
+
+    public Date setNovidatum(int counter){
+        Date danas = _cal.getTime();
+        _cal.add(Calendar.DATE, counter);
+        return _cal.getTime();
+    }
+
+    public int getRedniBrojDanaUGodini(Date izmenjeniDAtum){
+        return  5;
+    }
+
+    public int getRedniBrojDanaUGodini(){
+        _broj = _cal.get(Calendar.DAY_OF_YEAR) - 1;
+        return _broj;
+    }
+
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -83,13 +88,12 @@ public class PravoslavniKalendar {
 
         SimpleDateFormat rbDanuNedelji = new SimpleDateFormat(patern, locale);
         String rbDan = rbDanuNedelji.format(izmenjenidatum);
-        int broj = Integer.parseInt(rbDan);
-        return broj;
+        return Integer.parseInt(rbDan);
     }
 
-    public void setBojuTexta(int counter){
+    public boolean nedeljaJe(Date izmenjeniDAtum){
 
-
+        return true;
 
     }
 
