@@ -10,11 +10,12 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.AppCompatTextView;
 import com.interfacemockup.kalendar.R;
 
 import java.util.Date;
 
-public class PravoslavniSvetacLabel extends TextView {
+public class PravoslavniSvetacLabel extends AppCompatTextView {
 
     private PravoslavniKalendar sharedKalendar = PravoslavniKalendar.getInstance();
     private PravoslavneKonstante konstante = new PravoslavneKonstante();
@@ -31,9 +32,6 @@ public class PravoslavniSvetacLabel extends TextView {
         super(context, attrs, defStyleAttr);
     }
 
-    public PravoslavniSvetacLabel(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @SuppressLint("ResourceType")

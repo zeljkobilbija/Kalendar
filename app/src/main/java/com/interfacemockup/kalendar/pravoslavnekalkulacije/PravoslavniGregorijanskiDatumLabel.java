@@ -8,12 +8,13 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import java.util.Date;
 import java.util.Locale;
 
 @RequiresApi(api = Build.VERSION_CODES.N)
-public class PravoslavniGregorijanskiDatumLabel extends TextView {
+public class PravoslavniGregorijanskiDatumLabel extends AppCompatTextView {
 
     private PravoslavniKalendar sharedKalendar = PravoslavniKalendar.getInstance();
 

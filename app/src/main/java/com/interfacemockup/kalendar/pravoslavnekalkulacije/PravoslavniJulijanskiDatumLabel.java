@@ -8,11 +8,12 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import java.util.Date;
 import java.util.Locale;
 
-public class PravoslavniJulijanskiDatumLabel extends TextView {
+public class PravoslavniJulijanskiDatumLabel extends AppCompatTextView {
 
     private PravoslavniKalendar sharedKalendar = PravoslavniKalendar.getInstance();
 
@@ -28,9 +29,6 @@ public class PravoslavniJulijanskiDatumLabel extends TextView {
         super(context, attrs, defStyleAttr);
     }
 
-    public PravoslavniJulijanskiDatumLabel(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void napisiJulijanskiDatum(int counter){
