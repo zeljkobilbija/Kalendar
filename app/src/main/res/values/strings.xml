@@ -4,4 +4,8 @@
     <string name="greg_datum_label">Novi datum</string>
     <string name="pravoslavnipostlabel">POST</string>
     <string name="gregDatum">Novi Datum</string>
+    <string name="julijanski_datum">Julijanski Datum</string>
+    <string name="svetac_label">Ime svetitelja</string>
+    <string name="novi_gregorijanski_datum">Novi-Gregorijanski datum</string>
+    <string name="stari_julijanski_kalendar">Stari - Julijanski kalendar</string>
 </resources>

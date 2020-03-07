@@ -3,7 +3,7 @@
     <color name="colorPrimary">#444444</color>
     <color name="colorPrimaryDark">#2B2B2B</color>
     <color name="colorAccent">#CF331F</color>
-    <color name="colorTamnoSivo">#444444</color>
+    <color name="colorTamnoSivo">#706F6F</color>
     <color name="colorTamnoPlavo">#125876</color>
     <color name="colorOrange">#F69206</color>
     <color name="colorBorder">#112233</color>
@@ -12,4 +12,5 @@
     <color name="colorZeleno">#40C61C</color>
     <color name="colorSvetloPlavo">#94C4E7</color>
     <color name="colorBraon">#2B2B2B</color>
+    <color name="colorBanana">#BC9432</color>
 </resources>

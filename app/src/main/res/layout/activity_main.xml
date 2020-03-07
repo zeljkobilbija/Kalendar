@@ -7,6 +7,8 @@
         android:layout_height="match_parent"
         android:background="@color/colorBraon"
         tools:context=".MainActivity" tools:ignore="ExtraText">
+
+
    <View
            android:id="@+id/bgView"
            android:layout_width="wrap_content"
@@ -21,29 +23,42 @@
            android:id="@+id/idPostLabe"
            android:text="@string/pravoslavnipostlabel"
            android:layout_width="wrap_content"
-           android:layout_height="36dp"
+           android:layout_height="32dp"
            android:textAlignment="center"
            android:textSize="22sp"
            android:fontFamily="sans-serif"
-           android:textColor="@color/colorOrange"
+           android:textStyle="italic"
+           android:textColor="@color/colorBanana"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintTop_toTopOf="@+id/bgView"
            android:layout_marginTop="24dp"/>
 
+
    <com.interfacemockup.kalendar.pravoslavnekalkulacije.PravoslavniGregorijanskiDatumLabel
            android:id="@+id/idGregorijanskiDatumLabel"
            android:text="@string/gregDatum"
            android:layout_width="wrap_content"
-           android:layout_height="36dp"
+           android:layout_height="wrap_content"
            android:textAlignment="center"
-           android:textSize="22sp"
+           android:textStyle="italic"
+           android:textSize="20sp"
            android:textColor="@color/colorSiviText"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toBottomOf="@+id/idPostLabe"
            android:layout_marginTop="8dp"
-           android:fontFamily="sans-serif"/>
+           android:fontFamily="@font/actor"/>
+   <TextView
+           android:id="@+id/idGregTextView"
+           android:text="@string/novi_gregorijanski_datum"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="@color/colorTamnoSivo"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/idGregorijanskiDatumLabel"
+           android:layout_marginTop="4dp"/>
 
 
    <com.interfacemockup.kalendar.pravoslavnekalkulacije.PravoslavnaIkona
@@ -53,8 +68,49 @@
            android:src="@drawable/ik_24"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/idGregorijanskiDatumLabel"
+           app:layout_constraintTop_toBottomOf="@+id/idGregTextView"
            android:layout_marginTop="22dp"/>
+
+   <com.interfacemockup.kalendar.pravoslavnekalkulacije.PravoslavniSvetacLabel
+           android:id="@+id/idSvetacLabel"
+           android:text="@string/svetac_label"
+           android:layout_width="match_parent"
+           android:layout_height="76dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/idIkona"
+           android:layout_marginTop="16dp"
+           android:textAlignment="center"
+           android:textStyle="italic"
+           android:textSize="20sp"
+           android:textColor="@color/colorSiviText"
+           android:lines="3" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
+
+
+   <com.interfacemockup.kalendar.pravoslavnekalkulacije.PravoslavniJulijanskiDatumLabel
+           android:id="@+id/idJulijanskiDatumLabel"
+           android:text="@string/julijanski_datum"
+           android:layout_width="wrap_content"
+           android:layout_height="28dp"
+           android:textAlignment="center"
+           android:textSize="18sp"
+           android:textStyle="italic"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/idSvetacLabel"
+           android:layout_marginTop="16dp"
+           android:textColor="@color/colorBanana"/>
+
+   <TextView
+           android:id="@+id/idJulTextView"
+           android:text="@string/stari_julijanski_kalendar"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="@color/colorTamnoSivo"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/idJulijanskiDatumLabel"
+           android:layout_marginTop="4dp"/>
 
 
 
