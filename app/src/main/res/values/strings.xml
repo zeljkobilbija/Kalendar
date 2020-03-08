@@ -8,8 +8,9 @@
     <string name="svetac_label">Ime svetitelja</string>
     <string name="novi_gregorijanski_datum">Novi-Gregorijanski datum</string>
     <string name="stari_julijanski_kalendar">Stari - Julijanski kalendar</string>
-    <string name="btnB">B</string>
-    <string name="btnA">A</string>
-    <string name="btnC">C</string>
-    <string name="btnD">D</string>
+    <string name="btnA">Kalendar</string>
+    <string name="btnB">K</string>
+    <string name="btnC">$</string>
+    <string name="btnD">-</string>
+    <string name="todo">TODO</string>
 </resources>
